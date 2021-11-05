@@ -127,9 +127,9 @@
       transition: color 0.5s;
       font-size: 1.125rem;
       letter-spacing: 0.1em;
-   }
-   &:hover,
-   &:focus {
-      color: $color-accent;
+      &:hover,
+      &:focus {
+         color: $color-accent;
+      }
    }
 }
