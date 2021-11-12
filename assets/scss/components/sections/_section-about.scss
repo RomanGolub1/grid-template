@@ -3,63 +3,74 @@
 
 .about {
    background-color: $color-gray-light;
-   @extend %section;
+   padding-top: ($gap-x4);
+   padding-bottom: $gap-x3;
    &-container {
       @extend %container;
       display: grid;
       @include lg-min {
-         gap: $gap-x5;
          grid-template-columns: 1fr 271px;
+         gap: $gap-x5;
       }
       @include lg-md {
-         gap: $gap-x2;
          grid-template-columns: 1fr 271px;
+         gap: $gap-x2;
       }
       @include md-sm {
-         gap: $gap;
          grid-template-columns: 1fr 236px;
+         gap: $gap;
       }
       @include sm {
-         gap: $gap;
          grid-template-columns: 1fr;
+         gap: $gap;
       }
    }
-
    &-title {
       letter-spacing: 0.1em;
       color: $color-primary;
       font-size: $gap-x2;
       font-weight: bold;
-      margin-top: 0;
+      margin-top: 0px;
 
       @include lg {
-         font-size: 32px;
+         font-size: 2rem;
       }
       @include md {
          display: grid;
          justify-content: center;
          align-items: center;
          justify-items: center;
-         font-size: 24px;
+         font-size: 1.5rem;
       }
    }
    &-text {
       @include lg-min {
          font-size: 1.125rem;
       }
+      margin-top: -5px;
    }
    &-left {
       color: $color-gray;
-      border-right: 1px solid #707070;
-      font-size: 18px;
+      font-size: 1.125rem;
       @include sm {
          border: none;
       }
    }
    &-right {
+      position: relative;
       display: grid;
       align-content: center;
       justify-items: center;
+   }
+   &-right::before {
+      content: "";
+      position: absolute;
+      margin-right: 130%;
+      margin-top: 44%;
+      width: 2px;
+      height: 200px;
+      display: block;
+      background-color: rgba($color-gray, 0.1);
    }
    &-img {
       max-width: 100%;

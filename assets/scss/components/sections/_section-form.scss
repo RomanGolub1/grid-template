@@ -4,6 +4,10 @@
 .form {
    background-color: $color-primary;
    &-container {
+      padding: calc($gap-x2 - 10px) 0px;
+      // margin-bottom: $gap-x2;
+      padding-right: $gap;
+      padding-left: $gap;
       @extend %container;
       display: grid;
       gap: $gap;
@@ -11,24 +15,8 @@
       @include md-sm {
          grid-template-columns: repeat(2, 1fr);
       }
-      padding: $gap-x2 0px;
-      margin-bottom: $gap-x2;
-      padding-right: $gap;
-      padding-left: $gap;
    }
    &__item {
-      &::after {
-         position: absolute;
-         bottom: -$gap;
-         left: calc(50% - 75px / 2);
-
-         width: 75px;
-         height: 2px;
-
-         content: "";
-
-         background-color: rgba($color-light, 0.1);
-      }
    }
    &-section {
       @include md-sm {
@@ -61,6 +49,7 @@
       transition: 0.5s ease-in-out;
       border-bottom: 2px solid #707070;
       color: $color-light;
+      letter-spacing: 0.15em;
    }
    &-control {
       background-color: lighten($color-primary, 6%);
@@ -71,7 +60,10 @@
          background-color: lighten($color-primary, 10%);
       }
       &:focus::placeholder {
-         color: $color-light;
+         color: rgba($color-light, 50%);
+      }
+      &:hover::placeholder {
+         color: rgba($color-light, 50%);
       }
    }
    &-btn {
