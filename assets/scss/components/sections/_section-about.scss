@@ -3,34 +3,66 @@
 
 .about {
    background-color: $color-gray-light;
+   @extend %section;
    &-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      justify-items: end;
       @extend %container;
-      max-width: $ul;
-      padding-top: 90px;
-      padding-bottom: 80px;
+      display: grid;
+      @include lg-min {
+         gap: $gap-x5;
+         grid-template-columns: 1fr 271px;
+      }
+      @include lg-md {
+         gap: $gap-x2;
+         grid-template-columns: 1fr 271px;
+      }
+      @include md-sm {
+         gap: $gap;
+         grid-template-columns: 1fr 236px;
+      }
+      @include sm {
+         gap: $gap;
+         grid-template-columns: 1fr;
+      }
    }
+
    &-title {
       letter-spacing: 0.1em;
       color: $color-primary;
       font-size: $gap-x2;
       font-weight: bold;
       margin-top: 0;
+
+      @include lg {
+         font-size: 32px;
+      }
+      @include md {
+         display: grid;
+         justify-content: center;
+         align-items: center;
+         justify-items: center;
+         font-size: 24px;
+      }
    }
    &-text {
-      padding-top: 5px;
-      padding-right: 50px;
-      min-width: $lg;
+      @include lg-min {
+         font-size: 1.125rem;
+      }
    }
    &-left {
       color: $color-gray;
       border-right: 1px solid #707070;
       font-size: 18px;
+      @include sm {
+         border: none;
+      }
    }
    &-right {
-      margin-top: 0;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+   }
+   &-img {
+      max-width: 100%;
+      max-height: 480px;
    }
 }

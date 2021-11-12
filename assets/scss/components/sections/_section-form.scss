@@ -5,30 +5,70 @@
    background-color: $color-primary;
    &-container {
       @extend %container;
-      padding: 30px 0px;
-      margin-bottom: 40px;
-   }
-   &-section {
-      @extend %container;
       display: grid;
       gap: $gap;
       grid-template-columns: repeat(3, 1fr);
+      @include md-sm {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      padding: $gap-x2 0px;
+      margin-bottom: $gap-x2;
+      padding-right: $gap;
+      padding-left: $gap;
+   }
+   &__item {
+      &::after {
+         position: absolute;
+         bottom: -$gap;
+         left: calc(50% - 75px / 2);
+
+         width: 75px;
+         height: 2px;
+
+         content: "";
+
+         background-color: rgba($color-light, 0.1);
+      }
+   }
+   &-section {
+      @include md-sm {
+         &:nth-of-type(1) {
+            grid-column: 1 / span 2;
+         }
+      }
+      @include sm {
+         &:nth-of-type(1) {
+            grid-column: 1 / span 3;
+         }
+      }
+      @include sm {
+         &:nth-of-type(2) {
+            grid-column: 1 / span 3;
+         }
+      }
+      @include sm {
+         &:nth-of-type(3) {
+            grid-column: 1 / span 3;
+         }
+      }
    }
    &-control,
    &-btn {
-      border: none;
+      border: 2px solid transparent;
       padding: 18px;
       width: 100%;
       outline: none;
       transition: 0.5s ease-in-out;
-      border-bottom: 1px solid #707070;
+      border-bottom: 2px solid #707070;
       color: $color-light;
    }
    &-control {
       background-color: lighten($color-primary, 6%);
+      &:hover,
       &:focus {
-         border-bottom: 1px solid $color-light;
-         background-color: lighten($color-primary, 15%);
+         border: 2px solid $color-gray;
+         border-bottom: 2px solid $color-light;
+         background-color: lighten($color-primary, 10%);
       }
       &:focus::placeholder {
          color: $color-light;
@@ -36,11 +76,12 @@
    }
    &-btn {
       background-color: lighten($color-primary, 10%);
-      border: 1px solid transparent;
-      border-bottom: 1px solid #707070;
+      border: 2px solid transparent;
+      border-bottom: 2px solid #707070;
+      cursor: pointer;
       &:hover,
       &:focus {
-         border: 1px solid $color-gray-light;
+         border: 2px solid $color-gray-light;
          color: $color-gray-light;
          background-color: $color-accent;
       }

@@ -1,2 +1,36 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.footer {
+   display: grid;
+   margin-top: 40px;
+   padding: 70px 0;
+   background-color: $color-primary;
+   &-container {
+      @extend %container;
+   }
+   &-logo {
+      text-align: center;
+      color: $color-gray;
+      font-weight: 100;
+      font-size: 16px;
+      letter-spacing: 0.3em;
+      &__span {
+         letter-spacing: 0.05em;
+         color: $color-light;
+         font-size: 16px;
+         font-weight: bold;
+         display: block;
+      }
+   }
+
+   .fab {
+      padding: 6px;
+      padding-bottom: $gap-x2;
+      font-size: 36px;
+      &:hover,
+      &:focus {
+         color: $color-accent;
+      }
+   }
+}
