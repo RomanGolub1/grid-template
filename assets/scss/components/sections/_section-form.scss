@@ -3,9 +3,24 @@
 
 .form {
    background-color: $color-primary;
+
+   &-btn {
+      width: 100%;
+      height: 60px;
+      color: $color-light;
+      border-color: rgba($color-light, 0);
+      border-bottom-color: rgba($color-light, 0.2);
+      background-color: rgba($color-light, 0.1);
+      &:hover,
+      &:focus {
+         cursor: pointer;
+         border-color: $color-light;
+         background-color: $color-accent;
+      }
+   }
+
    &-container {
       padding: calc($gap-x2 - 10px) 0px;
-      // margin-bottom: $gap-x2;
       padding-right: $gap;
       padding-left: $gap;
       @extend %container;
@@ -16,8 +31,7 @@
          grid-template-columns: repeat(2, 1fr);
       }
    }
-   &__item {
-   }
+
    &-section {
       @include md-sm {
          &:nth-of-type(1) {
@@ -39,43 +53,37 @@
             grid-column: 1 / span 3;
          }
       }
-   }
-   &-control,
-   &-btn {
-      border: 2px solid transparent;
-      padding: 18px;
-      width: 100%;
-      outline: none;
-      transition: 0.5s ease-in-out;
-      border-bottom: 2px solid #707070;
-      color: $color-light;
-      letter-spacing: 0.15em;
-   }
-   &-control {
-      background-color: lighten($color-primary, 6%);
-      &:hover,
-      &:focus {
-         border: 2px solid $color-gray;
-         border-bottom: 2px solid $color-light;
-         background-color: lighten($color-primary, 10%);
-      }
-      &:focus::placeholder {
-         color: rgba($color-light, 50%);
-      }
-      &:hover::placeholder {
-         color: rgba($color-light, 50%);
-      }
-   }
-   &-btn {
-      background-color: lighten($color-primary, 10%);
-      border: 2px solid transparent;
-      border-bottom: 2px solid #707070;
-      cursor: pointer;
-      &:hover,
-      &:focus {
-         border: 2px solid $color-gray-light;
-         color: $color-gray-light;
-         background-color: $color-accent;
+
+      &__input {
+         height: 60px;
+         width: 100%;
+         outline: none;
+         font-size: 1.125rem;
+         letter-spacing: 0.15em;
+         color: $color-light;
+         border-bottom: 2px solid #707070;
+         padding-right: $gap-lg;
+         padding-left: $gap-lg;
+         color: $color-light;
+         border: 2px solid rgba($color-light, 0);
+         border-bottom-color: rgba($color-light, 0.25);
+         background-color: rgba($color-light, 0.05);
+         transition: background-color 0.5s, border-bottom-color 0.5s ease;
+
+         &::placeholder {
+            color: $color-gray;
+         }
+
+         &:hover,
+         &:focus {
+            border-color: rgba($color-light, 0.15);
+            border-bottom-color: $color-light;
+            background-color: rgba($color-light, 0.15);
+
+            &::placeholder {
+               color: lighten($color-gray, 15%);
+            }
+         }
       }
    }
 }

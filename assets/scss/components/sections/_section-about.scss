@@ -3,8 +3,7 @@
 
 .about {
    background-color: $color-gray-light;
-   padding-top: ($gap-x4);
-   padding-bottom: $gap-x3;
+   @extend %section;
    &-container {
       @extend %container;
       display: grid;
@@ -28,11 +27,8 @@
    &-title {
       letter-spacing: 0.1em;
       color: $color-primary;
-      font-size: $gap-x2;
+      font-size: 2.5rem;
       font-weight: bold;
-      margin-top: 0;
-      padding-bottom: $gap;
-
       @include lg {
          font-size: 2rem;
       }
@@ -44,12 +40,13 @@
          font-size: 1.5rem;
       }
    }
+
    &-text {
       @include lg {
          font-size: 1rem;
       }
-      margin-top: -5px;
    }
+
    &-left {
       color: $color-gray;
       font-size: 1.125rem;
@@ -57,22 +54,25 @@
          border: none;
       }
    }
+
    &-right {
       position: relative;
       display: grid;
       align-content: center;
       justify-items: center;
    }
+
    &-right::before {
       content: "";
       position: absolute;
-      margin-right: 130%;
-      margin-top: 44%;
+      margin-right: 137%;
+      margin-top: 50%;
       width: 2px;
       height: 200px;
       display: block;
       background-color: rgba($color-gray, 0.1);
    }
+
    &-image {
       max-width: 100%;
       max-height: 480px;

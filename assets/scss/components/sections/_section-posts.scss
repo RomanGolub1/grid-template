@@ -2,7 +2,7 @@
 @use "../../mixins/" as *;
 
 .posts {
-   padding: 30px;
+   padding: 60px;
 }
 .posts-container {
    @extend %container;
@@ -62,7 +62,7 @@
 .posts-item__img {
    display: grid;
    align-items: center;
-   height: 270px;
+   height: 280px;
    background-size: cover;
    background-position: center;
    transition: transform 0.5s ease;
