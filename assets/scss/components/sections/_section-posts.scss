@@ -2,90 +2,98 @@
 @use "../../mixins/" as *;
 
 .posts {
-   padding: 60px;
-}
-.posts-container {
-   @extend %container;
-   &__title {
-      color: $color-primary;
-      font-size: $gap-x2;
-      letter-spacing: 0.2rem;
-      margin-bottom: $gap-x3;
+   @extend %section;
+   &-container {
+      @extend %container;
+      &__title {
+         color: $color-primary;
+         font-size: $gap-x2;
+         letter-spacing: 0.2rem;
+         @include lg-md {
+            font-size: 32px;
+         }
+         @include md-sm {
+            font-size: 24px;
+         }
+         @include sm {
+            font-size: 24px;
+            text-align: center;
+         }
+      }
+   }
+   &-home {
+      display: grid;
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+      gap: $gap;
+      @include lg-min {
+         grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+         grid-template-columns: repeat(4, 1fr);
+      }
       @include lg-md {
-         font-size: 32px;
+         grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+         grid-template-columns: repeat(3, 1fr);
       }
       @include md-sm {
-         font-size: 24px;
+         grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+         grid-template-columns: 1fr 1fr;
       }
       @include sm {
-         font-size: 24px;
+         grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+         grid-template-columns: 1fr;
+      }
+   }
+   &-item {
+      background-color: lighten($color-gray-light, 5%);
+      transition: background-color 0.5s;
+      &:hover {
+         background-color: darken($color-gray-light, 5%);
+         .posts-item__img {
+            transform: scale(1.05) translateY(-7px);
+         }
+         .posts-item__title {
+            color: $color-gray-dark;
+         }
+      }
+      &__link {
+         display: grid;
+         grid-template-rows: 300px 1fr;
+         height: 100%;
+         overflow: hidden;
+      }
+      &__img {
+         display: grid;
+         align-items: center;
+         overflow: hidden;
+         align-content: center;
+         justify-content: center;
+         transition: transform 0.5s ease;
+         background-color: $color-primary;
+         background-position: center;
+         background-size: cover;
+      }
+      &__content {
+         display: grid;
+         padding: $gap;
          text-align: center;
+         align-content: center;
+      }
+      &__title {
+         color: $color-gray;
+         font-size: 18px;
+         margin: 0;
+         transition: color 0.25s ease;
       }
    }
-}
-.posts-home {
-   display: grid;
-   grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
-   // padding-bottom: $gap;
-   gap: $gap;
-   @include lg-md {
-      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
-      grid-template-columns: repeat(3, 1fr);
+   &-text {
+      margin-top: $gap-x2;
+      color: $color-gray;
+      font-size: 16px;
    }
-   @include md-sm {
-      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
-      grid-template-columns: 1fr 1fr;
-   }
-   @include sm {
-      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
-      grid-template-columns: 1fr;
-   }
-}
-.posts-item {
-   background-color: #eeeeee;
-   &:hover {
-      background-color: $color-gray-light;
-      .posts-item__img {
-         transform: scale(1.05) translateY(-6.5px);
-      }
-      .posts-item__title {
-         color: $color-gray-dark;
-      }
-   }
-}
-.posts-item__link {
-   display: grid;
-   grid-template-rows: 300px 1fr;
-   height: 100%;
-   overflow: hidden;
-}
-.posts-item__img {
-   display: grid;
-   align-items: center;
-   height: 280px;
-   background-size: cover;
-   background-position: center;
-   transition: transform 0.5s ease;
-}
-.posts-item__content {
-   display: grid;
-   padding: $gap;
-   text-align: center;
-   align-content: center;
-}
-.posts-item__title {
-   color: $color-gray;
-   font-size: 18px;
-   line-height: 1.3;
-   margin: 0;
-   transition: color 0.25s ease;
-}
-.posts-text {
-   margin-top: $gap;
-   color: $color-gray;
-   font-size: 16px;
 }
 
+h4 {
+   font-family: $font-header;
+}
 .posts-item:nth-of-type(1) {
    grid-area: p1;
 }

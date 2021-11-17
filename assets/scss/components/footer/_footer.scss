@@ -2,9 +2,8 @@
 @use "../../mixins" as *;
 
 .footer {
-   margin-top: ($gap * 2);
    text-align: center;
-   padding: ($gap * 3.5) $gap ($gap * 4);
+   padding: ($gap * 2.5) $gap ($gap * 3.5);
    background-color: $color-primary;
    &-container {
       @extend %container;

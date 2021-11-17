@@ -4,6 +4,7 @@
 .about {
    background-color: $color-gray-light;
    @extend %section;
+   letter-spacing: 0.055em;
    &-container {
       @extend %container;
       display: grid;
@@ -60,6 +61,18 @@
       display: grid;
       align-content: center;
       justify-items: center;
+      @include lg-min {
+         right: -$gap * 2.5;
+      }
+      @include lg-md {
+         right: -$gap;
+      }
+      @include md-sm {
+         right: -$gap-sm;
+      }
+      @include sm {
+         display: none;
+      }
    }
 
    &-right::before {

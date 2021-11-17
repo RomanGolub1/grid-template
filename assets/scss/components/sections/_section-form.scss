@@ -4,21 +4,6 @@
 .form {
    background-color: $color-primary;
 
-   &-btn {
-      width: 100%;
-      height: 60px;
-      color: $color-light;
-      border-color: rgba($color-light, 0);
-      border-bottom-color: rgba($color-light, 0.2);
-      background-color: rgba($color-light, 0.1);
-      &:hover,
-      &:focus {
-         cursor: pointer;
-         border-color: $color-light;
-         background-color: $color-accent;
-      }
-   }
-
    &-container {
       padding: calc($gap-x2 - 10px) 0px;
       padding-right: $gap;
@@ -84,6 +69,21 @@
                color: lighten($color-gray, 15%);
             }
          }
+      }
+   }
+
+   &-btn {
+      width: 100%;
+      height: 60px;
+      color: $color-light;
+      border-color: rgba($color-light, 0);
+      border-bottom-color: rgba($color-light, 0.2);
+      background-color: rgba($color-light, 0.1);
+      &:hover,
+      &:focus {
+         cursor: pointer;
+         border-color: $color-light;
+         background-color: $color-accent;
       }
    }
 }
