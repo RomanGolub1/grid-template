@@ -102,6 +102,7 @@
       }
       @include md {
          @include unlist;
+         letter-spacing: 0.1em;
          display: none;
          background-color: rgba($color-gray-dark, 0.9);
          text-align: right;
@@ -126,7 +127,7 @@
       display: block;
       transition: color 0.5s;
       font-size: 1.125rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.089em;
       &:hover,
       &:focus {
          color: $color-accent;

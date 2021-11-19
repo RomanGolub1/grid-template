@@ -348,7 +348,7 @@ template {
 /* sm */
 /* xs */
 /* xx */
-.posts__container, .form__container, .about__container, .header-content__container, .header-menu__container {
+.footer__container, .posts__container, .form__container, .about__container, .header-content__container, .header-menu__container {
   max-width: 1340px;
   margin: auto;
   padding-left: 20px;
@@ -366,9 +366,9 @@ template {
 }
 
 html {
+  color: #637588;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  overflow-y: scroll;
 }
 
 h1 {
@@ -582,7 +582,7 @@ input:focus {
   -o-transition: color 0.5s;
   transition: color 0.5s;
   font-size: 1.125rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.089em;
 }
 .header-navbar__link:hover, .header-navbar__link:focus {
   color: #d66926;
@@ -745,7 +745,7 @@ input:focus {
 .about__content p:last-of-type {
   margin: 0;
 }
-.about__content p__image {
+.about__image {
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -753,7 +753,7 @@ input:focus {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.about img {
+.about__image img {
   max-width: 100%;
   max-height: 480px;
 }
@@ -920,6 +920,54 @@ input:focus {
 .post-item:nth-of-type(6) {
   grid-area: p6;
 }
+
+.footer {
+  padding: 50px 20px 70px;
+  background-color: #2d3651;
+  text-align: center;
+}
+.footer__social {
+  position: relative;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
+  grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+}
+.footer__social::after {
+  position: absolute;
+  bottom: -20px;
+  left: calc(50% - 37.5px);
+  width: 75px;
+  height: 2px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer__social a {
+  display: block;
+  padding: 10px;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.footer__social a:hover, .footer__social a:focus {
+  color: #d66926;
+}
+.footer__social .fab {
+  font-size: 36px;
+}
+.footer__copy span:nth-of-type(1) {
+  margin-right: -0.5em;
+  letter-spacing: 0.33em;
+  font-weight: 100;
+}
+.footer__copy span:nth-of-type(2) {
+  letter-spacing: 0.05em;
+  color: #e5e5e5;
+  font-weight: 700;
+}
 @media (min-width: 576px) {
   .posts__actions {
     display: -webkit-box;
@@ -1077,6 +1125,7 @@ input:focus {
     margin: 0;
     padding: 0;
     list-style: none;
+    letter-spacing: 0.1em;
     display: none;
     background-color: rgba(68, 89, 110, 0.9);
     text-align: right;
